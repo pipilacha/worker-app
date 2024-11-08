@@ -21,13 +21,13 @@ pipeline {
                 }
             }
             steps {
-                echo 'Running unit tests on worker app'
+                echo 'Running unit tests on worker-app'
                 sh 'mvn clean test'
             }
         }
         stage('package') {   
             when { 
-                branch 'master'
+                environment name: 'CHANGE_TARGET', value: 'main'
             }
             agent{
                 docker{
