@@ -10,9 +10,7 @@ pipeline {
             }
             steps {
                 echo 'Compiling worker app'
-                dir('worker'){
-                    sh 'mvn compile'
-                }
+                sh 'mvn compile'
             }
         }
         stage('test') {
@@ -24,9 +22,7 @@ pipeline {
             }
             steps {
                 echo 'Running unit tests on worker app'
-                dir('worker'){
-                    sh 'mvn clean test'
-                }
+                sh 'mvn clean test'
             }
         }
         stage('package') {   
@@ -41,9 +37,7 @@ pipeline {
             }
             steps {
                 echo 'Packaging worker app'
-                dir('worker'){
-                    sh 'mvn package -DskipTests'
-                }
+                sh 'mvn package -DskipTests'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
