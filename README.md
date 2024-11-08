@@ -1,3 +1,6 @@
+### 
+Worker-app reads the vote count from the redis service and persists it to the PostgreSQL db.
+
 ### CI
 
 CI is handled by Jenkins Pipelines.
