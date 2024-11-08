@@ -1,0 +1,6 @@
+Jenkinsfile
+./src/test/
+.env
+.gitignore
+Dockerfile
+docker-compose.yaml
