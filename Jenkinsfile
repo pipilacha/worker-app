@@ -25,7 +25,7 @@ pipeline {
                 sh 'mvn clean test'
             }
         }
-        stage('package') {   
+        stage('mvn package') {   
             when { 
                 environment name: 'CHANGE_TARGET', value: 'main'
             }
